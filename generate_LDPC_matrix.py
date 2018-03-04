@@ -37,10 +37,13 @@ C_Base = baseMatrix[rows-1][0:rows].reshape(1,rows)
 D_Base = baseMatrix[rows-1][rows:rows+1].reshape(1,1)
 E_Base = baseMatrix[rows-1][rows+1:cols].reshape(1,rows-1)
 
-def gen_sub_mat(val, z):
-    if(val == -1):
+def gen_sub_mat(val1, z):
+    
+    
+    if(val1 == -1):
         return np.zeros((z,z), dtype=int)
     else:
+        val = int(val1 * z / 96)
         sub_mat = np.eye(z,dtype=int)
         rest = val % z
         
